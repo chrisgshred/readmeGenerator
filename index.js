@@ -3,31 +3,59 @@ var fs = require('fs');
 
 // array of questions for user
 const questions = [
-    {
+      {
         type: "input",
-        name: "name",
-        message: "What is your name?"
+        name: "title",
+        message: "What is the title of your project?"
       },
       {
         type: "input",
-        name: "emailAddress",
-        message: "What is your email address?"
+        name: "description",
+        message: "What is your project description?"
+      },
+      {
+        type: "input",
+        name: "tableofcontents",
+        message: "Please enter your table of contents."
+      },
+      {
+        type: "input",
+        name: "installation",
+        message: "Enter installation instructions."
+      },
+      {
+        type: "input",
+        name: "usage",
+        message: "Please enter usage details."
       },
 
 ];
 
 function newReadme(data) {
 return `
-1. [#Name](#Name)
-2. [#Email](#Email)
+1. [#Title](#Title)
+2. [#Description](#Description)
+3. [#Tableofcontents](#Tableofcontents)
+4. [#Installation](#Installation)
+5. [#Usage](#Usage)
 
-# Name :
+# ${data.title}
 
-### My name is: ${data.name}
+## Description :
 
-# Email :
+### ${data.description}
 
-###  My email is: ${data.emailAddress}
+## Table of Contents :
+
+### ${data.tableofcontents}
+
+## Installation :
+
+### ${data.installation}
+
+## Usage :
+
+### ${data.usage}
 `
 
 
